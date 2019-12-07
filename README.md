@@ -4,4 +4,4 @@ Probatio's models for 3D printing
 
 ![probatio-block-3dp](images/block.png)
 
-Link for the latest version of the block in Fusion 360: [](https://a360.co/2OMQyPX)
+Link for the latest version of the block in Fusion 360: https://a360.co/2OMQyPX
