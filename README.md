@@ -6,24 +6,27 @@ Probatio's models for 3D printing
 
 [Model in Fusion 360](https://a360.co/2OMQyPX)
 
+## Probatio Support Lateral (2 parts)
+
 ![probatio_support_lateral_part_1_v4](images/probatio_support_lateral_part_1_v4.stl.png)
 
 [probatio_support_lateral_part_1_v4](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_lateral_part_1_v4.stl)
 
 
-![probatio_support_neck_v9](images/probatio_support_neck_v9.stl.png)
+![probatio_support_lateral_part_2_v4](images/probatio_support_lateral_part_2_v4.stl.png)
 
-[probatio_support_neck_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_neck_v9.stl)
+[probatio_support_lateral_part_2_v4](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_lateral_part_2_v4.stl)
 
+## Probatio Support Lateral (single part)
 
 ![probatio_support_lateral_single_part_option_v2](images/probatio_support_lateral_single_part_option_v2.stl.png)
 
 [probatio_support_lateral_single_part_option_v2](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_lateral_single_part_option_v2.stl)
 
 
-![probatio_support_lateral_part_2_v4](images/probatio_support_lateral_part_2_v4.stl.png)
+![probatio_support_neck_v9](images/probatio_support_neck_v9.stl.png)
 
-[probatio_support_lateral_part_2_v4](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_lateral_part_2_v4.stl)
+[probatio_support_neck_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_neck_v9.stl)
 
 
 ![probatio_support_4_DoF_cradle_v16](images/probatio_support_4_DoF_cradle_v16.stl.png)
