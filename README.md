@@ -40,9 +40,7 @@ Probatio's models for 3D printing
 
 [probatio_hub_case_bottom](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_hub_case_bottom.stl)
 
-
 ## Block Tops
-
 
 ![probatio_block_top_rotary_encoder_v5](images/probatio_block_top_rotary_encoder_v5.stl.png)
 
@@ -138,12 +136,29 @@ Probatio's models for 3D printing
 
 [probatio_block_top_breath_v1](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_breath_v1.stl)
 
-## Block bottom 1x1
+## Block Bottom 1x1
 
 ![probatio_block_bottom_v34](images/probatio_block_bottom_v34.stl.png)
 
 [probatio_block_bottom_v34](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_bottom_v34.stl)
 
+## Block Joystick 4-DOFs 3x3
+
+![probatio_block_bottom_4dof_joystick_v14](images/probatio_block_bottom_4dof_joystick_v14.stl.png)
+
+[probatio_block_bottom_4dof_joystick_v14](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_bottom_4dof_joystick_v14.stl)
+
+
+![probatio_block_top_4dof_joystick_v12](images/probatio_block_top_4dof_joystick_v12.stl.png)
+
+[probatio_block_top_4dof_joystick_v12](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_4dof_joystick_v12.stl)
+
+
+![probatio_support_4_DoF_cradle_v16](images/probatio_support_4_DoF_cradle_v16.stl.png)
+
+[probatio_support_4_DoF_cradle_v16](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_4_DoF_cradle_v16.stl)
+
+## Bases
 
 ![probatio_base_3x3_top_3mm_v11](images/probatio_base_3x3_top_3mm_v11.stl.png)
 
@@ -173,22 +188,6 @@ Probatio's models for 3D printing
 ![probatio_base_1x3_bottom_3mm_v9](images/probatio_base_1x3_bottom_3mm_v9.stl.png)
 
 [probatio_base_1x3_bottom_3mm_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_base_1x3_bottom_3mm_v9.stl)
-
-## Block Joystick 4-DOFs 3x3
-
-![probatio_block_bottom_4dof_joystick_v14](images/probatio_block_bottom_4dof_joystick_v14.stl.png)
-
-[probatio_block_bottom_4dof_joystick_v14](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_bottom_4dof_joystick_v14.stl)
-
-
-![probatio_block_top_4dof_joystick_v12](images/probatio_block_top_4dof_joystick_v12.stl.png)
-
-[probatio_block_top_4dof_joystick_v12](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_4dof_joystick_v12.stl)
-
-
-![probatio_support_4_DoF_cradle_v16](images/probatio_support_4_DoF_cradle_v16.stl.png)
-
-[probatio_support_4_DoF_cradle_v16](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_4_DoF_cradle_v16.stl)
 
 ## Dummy Blocks (for support)
 
