@@ -6,7 +6,7 @@ Probatio's models for 3D printing
 
 [Model in Fusion 360](https://a360.co/2OMQyPX)
 
-## Probatio Support Lateral (2 parts)
+## Lateral support (2 parts)
 
 ![probatio_support_lateral_part_1_v4](images/probatio_support_lateral_part_1_v4.stl.png)
 
@@ -17,21 +17,17 @@ Probatio's models for 3D printing
 
 [probatio_support_lateral_part_2_v4](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_lateral_part_2_v4.stl)
 
-## Probatio Support Lateral (single part)
+## Lateral support (single part)
 
 ![probatio_support_lateral_single_part_option_v2](images/probatio_support_lateral_single_part_option_v2.stl.png)
 
 [probatio_support_lateral_single_part_option_v2](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_lateral_single_part_option_v2.stl)
 
+## Neck support for Base 1x3
 
 ![probatio_support_neck_v9](images/probatio_support_neck_v9.stl.png)
 
 [probatio_support_neck_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_neck_v9.stl)
-
-
-![probatio_support_4_DoF_cradle_v16](images/probatio_support_4_DoF_cradle_v16.stl.png)
-
-[probatio_support_4_DoF_cradle_v16](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_4_DoF_cradle_v16.stl)
 
 
 ![probatio_hub_case_top](images/probatio_hub_case_top.stl.png)
@@ -44,34 +40,7 @@ Probatio's models for 3D printing
 [probatio_hub_case_bottom](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_hub_case_bottom.stl)
 
 
-![probatio_dummy_block_2x2_top_v9](images/probatio_dummy_block_2x2_top_v9.stl.png)
 
-[probatio_dummy_block_2x2_top_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_2x2_top_v9.stl)
-
-
-![probatio_dummy_block_2x2_bottom_v9](images/probatio_dummy_block_2x2_bottom_v9.stl.png)
-
-[probatio_dummy_block_2x2_bottom_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_2x2_bottom_v9.stl)
-
-
-![probatio_dummy_block_1x2_top_v9](images/probatio_dummy_block_1x2_top_v9.stl.png)
-
-[probatio_dummy_block_1x2_top_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x2_top_v9.stl)
-
-
-![probatio_dummy_block_1x2_bottom_v9](images/probatio_dummy_block_1x2_bottom_v9.stl.png)
-
-[probatio_dummy_block_1x2_bottom_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x2_bottom_v9.stl)
-
-
-![probatio_dummy_block_1x1_top](images/probatio_dummy_block_1x1_top.stl.png)
-
-[probatio_dummy_block_1x1_top](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x1_top.stl)
-
-
-![probatio_dummy_block_1x1_bottom](images/probatio_dummy_block_1x1_bottom.stl.png)
-
-[probatio_dummy_block_1x1_bottom](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x1_bottom.stl)
 
 
 ![probatio_block_top_rotary_encoder_v5](images/probatio_block_top_rotary_encoder_v5.stl.png)
@@ -168,11 +137,7 @@ Probatio's models for 3D printing
 
 [probatio_block_top_breath_v1](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_breath_v1.stl)
 
-
-![probatio_block_top_4dof_joystick_v12](images/probatio_block_top_4dof_joystick_v12.stl.png)
-
-[probatio_block_top_4dof_joystick_v12](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_4dof_joystick_v12.stl)
-
+## Block bottom 1x1
 
 ![probatio_block_bottom_v34](images/probatio_block_bottom_v34.stl.png)
 
@@ -213,5 +178,45 @@ Probatio's models for 3D printing
 
 [probatio_base_1x3_bottom_3mm_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_base_1x3_bottom_3mm_v9.stl)
 
+## Block Joystick 4-DOFs 3x3
+
+![probatio_support_4_DoF_cradle_v16](images/probatio_support_4_DoF_cradle_v16.stl.png)
+
+[probatio_support_4_DoF_cradle_v16](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_support_4_DoF_cradle_v16.stl)
 
 
+![probatio_block_top_4dof_joystick_v12](images/probatio_block_top_4dof_joystick_v12.stl.png)
+
+[probatio_block_top_4dof_joystick_v12](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_4dof_joystick_v12.stl)
+
+
+# Dummy Blocks (for support)
+
+![probatio_dummy_block_2x2_top_v9](images/probatio_dummy_block_2x2_top_v9.stl.png)
+
+[probatio_dummy_block_2x2_top_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_2x2_top_v9.stl)
+
+
+![probatio_dummy_block_2x2_bottom_v9](images/probatio_dummy_block_2x2_bottom_v9.stl.png)
+
+[probatio_dummy_block_2x2_bottom_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_2x2_bottom_v9.stl)
+
+
+![probatio_dummy_block_1x2_top_v9](images/probatio_dummy_block_1x2_top_v9.stl.png)
+
+[probatio_dummy_block_1x2_top_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x2_top_v9.stl)
+
+
+![probatio_dummy_block_1x2_bottom_v9](images/probatio_dummy_block_1x2_bottom_v9.stl.png)
+
+[probatio_dummy_block_1x2_bottom_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x2_bottom_v9.stl)
+
+
+![probatio_dummy_block_1x1_top](images/probatio_dummy_block_1x1_top.stl.png)
+
+[probatio_dummy_block_1x1_top](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x1_top.stl)
+
+
+![probatio_dummy_block_1x1_bottom](images/probatio_dummy_block_1x1_bottom.stl.png)
+
+[probatio_dummy_block_1x1_bottom](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x1_bottom.stl)
