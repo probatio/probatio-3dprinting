@@ -191,31 +191,31 @@ Probatio's models for 3D printing
 
 ## Dummy Blocks (for support)
 
-![probatio_dummy_block_2x2_top_v9](images/probatio_dummy_block_2x2_top_v9.stl.png)
+![probatio_spacer_block_2x2_top_v9](images/probatio_spacer_block_2x2_top_v9.stl.png)
 
-[probatio_dummy_block_2x2_top_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_2x2_top_v9.stl)
-
-
-![probatio_dummy_block_2x2_bottom_v9](images/probatio_dummy_block_2x2_bottom_v9.stl.png)
-
-[probatio_dummy_block_2x2_bottom_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_2x2_bottom_v9.stl)
+[probatio_spacer_block_2x2_top_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_spacer_block_2x2_top_v9.stl)
 
 
-![probatio_dummy_block_1x2_top_v9](images/probatio_dummy_block_1x2_top_v9.stl.png)
+![probatio_spacer_block_2x2_bottom_v9](images/probatio_spacer_block_2x2_bottom_v9.stl.png)
 
-[probatio_dummy_block_1x2_top_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x2_top_v9.stl)
-
-
-![probatio_dummy_block_1x2_bottom_v9](images/probatio_dummy_block_1x2_bottom_v9.stl.png)
-
-[probatio_dummy_block_1x2_bottom_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x2_bottom_v9.stl)
+[probatio_spacer_block_2x2_bottom_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_spacer_block_2x2_bottom_v9.stl)
 
 
-![probatio_dummy_block_1x1_top](images/probatio_dummy_block_1x1_top.stl.png)
+![probatio_spacer_block_1x2_top_v9](images/probatio_spacer_block_1x2_top_v9.stl.png)
 
-[probatio_dummy_block_1x1_top](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x1_top.stl)
+[probatio_spacer_block_1x2_top_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_spacer_block_1x2_top_v9.stl)
 
 
-![probatio_dummy_block_1x1_bottom](images/probatio_dummy_block_1x1_bottom.stl.png)
+![probatio_spacer_block_1x2_bottom_v9](images/probatio_spacer_block_1x2_bottom_v9.stl.png)
 
-[probatio_dummy_block_1x1_bottom](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_dummy_block_1x1_bottom.stl)
+[probatio_spacer_block_1x2_bottom_v9](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_spacer_block_1x2_bottom_v9.stl)
+
+
+![probatio_spacer_block_1x1_top](images/probatio_spacer_block_1x1_top.stl.png)
+
+[probatio_spacer_block_1x1_top](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_spacer_block_1x1_top.stl)
+
+
+![probatio_spacer_block_1x1_bottom](images/probatio_spacer_block_1x1_bottom.stl.png)
+
+[probatio_spacer_block_1x1_bottom](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_spacer_block_1x1_bottom.stl)
