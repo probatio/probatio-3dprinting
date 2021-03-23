@@ -127,9 +127,9 @@ Probatio's models for 3D printing
 [probatio_block_top_dual_buttons_v2](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_dual_buttons_v2.stl)
 
 
-![probatio_block_top_cherry_mx_v5](images/probatio_block_top_cherry_mx_v5.stl.png)
+![probatio_block_top_quad_keys_v5](images/probatio_block_top_quad_keys_v5.stl.png)
 
-[probatio_block_top_cherry_mx_v5](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_cherry_mx_v5.stl)
+[probatio_block_top_quad_keys_v5](https://github.com/probatio/probatio-3dprinting/blob/master/stls/probatio_block_top_quad_keys_v5.stl)
 
 
 ![probatio_block_top_breath_v1](images/probatio_block_top_breath_v1.stl.png)
