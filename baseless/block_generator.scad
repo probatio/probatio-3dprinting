@@ -1,10 +1,11 @@
 mm = 1;
 
-module probatio_block( x, y
+module probatio_block( x, y, part="both",
                      // changing the below defaults will likely break the model
                      , block_unit = 50 * mm
                      , block_wall_thickness = 2 * mm
                      , block_top_height = 15.5 * mm
+                     , block_fillet_radius = 2 * mm
                      )
 {
     assert(x >= 1, "Probatio block x dimension must be at least one");
@@ -111,7 +112,7 @@ module probatio_block( x, y
         top_pin_y = block_top_height - top_to_top_gap - pin_radius;
         bottom_pin_y = top_pin_y - 2 * pin_to_pin_gap - 4 * pin_radius;
         middle_pin_y = (top_pin_y + bottom_pin_y) / 2;
-        slot_top_y = top_pin_y;
+        slot_top_y = block_top_height;
         slot_bottom_y = bottom_pin_y;
         magnet_x = block_top_height - side_to_top_gap - magnet_radius;
         magnet_y = middle_pin_y;
@@ -194,7 +195,7 @@ module probatio_block( x, y
         }
     
         for (deg = [0,90,180,270]) corner_rotate(deg, [0,0,1]) one_connector();
-        pins();
+        corner_rotate(90, [0,0,1]) pins();
     }
 
     module half_side_connector_cuts()
@@ -253,7 +254,7 @@ module probatio_block( x, y
         }
     }
 
-    module solid_block()
+    module full_block()
     {
         difference()
         {
@@ -266,13 +267,34 @@ module probatio_block( x, y
         }
     }
 
+    module fillets()
+    {
+        corners = [ [inner_origin, inner_origin, inner_origin]
+                  , [inner_origin, inner_y,      inner_origin]
+                  , [inner_x,      inner_origin, inner_origin]
+                  , [inner_x,      inner_y,      inner_origin]
+                  ];
+        hull()
+        {
+            for (corner = corners)
+            {
+                translate(corner)
+                {
+                    sphere(r=block_fillet_radius);
+                    cylinder(h=block_unit, r=block_fillet_radius);   
+                }
+            }
+        }
+    }
+
     module block_top()
     {
         color("red") intersection()
         {
-            solid_block();
+            full_block();
             translate([0, 0, block_bottom_height])
                 cube([outer_x, outer_y, block_top_height]);
+            fillets();
         }
     }
 
@@ -280,11 +302,21 @@ module probatio_block( x, y
     {
         color("silver") intersection()
         {
-            solid_block();
+            full_block();
             cube([outer_x, outer_y, block_bottom_height]);
+            fillets();
         }
     }
 
-    block_top();
-    block_bottom();
+    if (part == "both")
+    {
+        block_top();
+        block_bottom();
+    }
+    else if (part == "top")
+        block_top();
+    else if (part == "bottom")
+        block_bottom();
 }
+
+
