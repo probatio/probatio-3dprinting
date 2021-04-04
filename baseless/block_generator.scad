@@ -21,6 +21,44 @@ module probatio_block( x, y, part="both",
     block_midpoint =  [block_unit * x / 2, block_unit * y / 2, block_unit / 2];
     block_bottom_height = block_unit - block_top_height;
 
+    // panel cut parameters
+    bolt_head_radius = 6 * mm / 2;
+    bolt_head_height = 1.7 * mm;
+    bolt_nominal_radius = 3 * mm / 2;
+    bolt_length = 8 * mm;
+    top_to_top_gap = 1 * mm;
+    side_to_top_gap = 0.5 * mm;
+    pin_radius = 2.6 * mm / 2;
+    slot_radius = 3 * mm / 2;
+    pin_to_slot_gap = 0.4 * mm;
+    pin_to_pin_gap = 0.8 * mm;
+    magnet_radius = 4 * mm / 2;
+    magnet_well_radius = magnet_radius + 0.2 * mm;
+    magnet_thickness = 2 * mm;
+    magnet_wall_thickness = 0.5 * mm;
+    
+    // panel cut derived positions
+    bolt_x = corner_midpoint.x;
+    bolt_y = block_top_height - top_to_top_gap - bolt_head_radius;
+    slot_x = block_top_height + side_to_top_gap + slot_radius;
+    pins_x = slot_x + slot_radius + pin_to_slot_gap + pin_radius;
+    top_pin_y = block_top_height - top_to_top_gap - pin_radius;
+    bottom_pin_y = top_pin_y - 2 * pin_to_pin_gap - 4 * pin_radius;
+    middle_pin_y = (top_pin_y + bottom_pin_y) / 2;
+    slot_top_y = block_top_height;
+    slot_bottom_y = bottom_pin_y;
+    magnet_x = block_top_height - side_to_top_gap - magnet_radius;
+    magnet_y = middle_pin_y;
+    second_half_translation = 
+        [ bolt_x + bolt_head_radius + pin_radius 
+            - block_top_height - slot_radius - side_to_top_gap
+        , 0
+        , 0
+        ];
+    assert(second_half_translation.x == 11.8 * mm
+          , "Based on solvespace prototype"
+          );
+
     module half_block_basis ()
     {
         union () 
@@ -86,114 +124,85 @@ module probatio_block( x, y, part="both",
                     children();
     }
     
+    module half_pins()
+    {
+        pins = [ [pins_x, top_pin_y, 0]
+               , [pins_x, middle_pin_y, 0]
+               , [pins_x, bottom_pin_y, 0] 
+               ];
+        for (pin = pins) translate(pin) 
+            cylinder(h=block_wall_thickness, r=pin_radius);
+    }
+    
+    module slot()
+    {
+        slot_extents = [ [slot_x, slot_top_y, 0]
+                       , [slot_x, slot_bottom_y, 0] 
+                       ];
+        hull()
+            for (slot_position = slot_extents) translate(slot_position)
+                cylinder(h=block_wall_thickness, r=slot_radius);
+    }
+    
+    module pins()
+    {
+        half_pins();
+        translate(second_half_translation) half_pins();
+    }
+    
+    module slots()
+    {
+        slot();
+        translate(second_half_translation) slot();
+    }
+    
+    module left_magnet()
+    {
+        translate([magnet_x, magnet_y, magnet_wall_thickness])
+            cylinder( h = block_wall_thickness - magnet_wall_thickness
+                    , r1 = magnet_well_radius
+                    , r2 = magnet_radius
+                    );
+    }
+
+    module right_magnet()
+    {
+        corner_repositioned()
+            mirror([1,0,0]) corner_centered() left_magnet();
+    }
+
+    module magnets()
+    {
+        left_magnet(); right_magnet();
+    }
+    
+    module bolt()
+    {
+        translate([bolt_x, bolt_y, 0]) union()
+        {
+            // head
+            cylinder( h = bolt_head_height
+                    , r1 = bolt_head_radius
+                    , r2 = bolt_nominal_radius
+                    );
+    
+            // shaft
+            cylinder( h = bolt_length
+                    , r = bolt_nominal_radius
+                    );
+            
+        }
+    }
+    
+    module one_connector()
+    {
+        slots();
+        magnets();
+        bolt();
+    }
+    
     module connector_panel_cuts()
     {
-        // parameters
-        bolt_head_radius = 6 * mm / 2;
-        bolt_head_height = 1.7 * mm;
-        bolt_nominal_radius = 3 * mm / 2;
-        bolt_length = 8 * mm;
-        top_to_top_gap = 2 * mm;
-        side_to_top_gap = 0.5 * mm;
-        pin_radius = 2.6 * mm / 2;
-        slot_radius = 3 * mm / 2;
-        pin_to_slot_gap = 0.4 * mm;
-        pin_to_pin_gap = 0.8 * mm;
-        magnet_radius = 4 * mm / 2;
-        magnet_well_radius = magnet_radius + 0.2 * mm;
-        magnet_thickness = 2 * mm;
-        magnet_wall_thickness = 0.5 * mm;
-    
-        // derived
-        bolt_x = corner_midpoint.x;
-        bolt_y = block_top_height - top_to_top_gap - bolt_head_radius;
-        slot_x = block_top_height + side_to_top_gap + slot_radius;
-        pins_x = slot_x + slot_radius + pin_to_slot_gap + pin_radius;
-        top_pin_y = block_top_height - top_to_top_gap - pin_radius;
-        bottom_pin_y = top_pin_y - 2 * pin_to_pin_gap - 4 * pin_radius;
-        middle_pin_y = (top_pin_y + bottom_pin_y) / 2;
-        slot_top_y = block_top_height;
-        slot_bottom_y = bottom_pin_y;
-        magnet_x = block_top_height - side_to_top_gap - magnet_radius;
-        magnet_y = middle_pin_y;
-        second_half_translation = 
-            [ bolt_x + bolt_head_radius + pin_radius 
-                - block_top_height - slot_radius - side_to_top_gap
-            , 0
-            , 0
-            ];
-        assert(second_half_translation.x == 11.8 * mm
-              , "Based on solvespace prototype"
-              );
-    
-        module half_pins()
-        {
-            pins = [ [pins_x, top_pin_y, 0]
-                   , [pins_x, middle_pin_y, 0]
-                   , [pins_x, bottom_pin_y, 0] 
-                   ];
-            for (pin = pins) translate(pin) 
-                cylinder(h=block_wall_thickness, r=pin_radius);
-        }
-    
-        module slot()
-        {
-            slot_extents = [ [slot_x, slot_top_y, 0]
-                           , [slot_x, slot_bottom_y, 0] 
-                           ];
-            hull()
-                for (slot_position = slot_extents) translate(slot_position)
-                    cylinder(h=block_wall_thickness, r=slot_radius);
-        }
-    
-        module pins()
-        {
-            half_pins();
-            translate(second_half_translation) half_pins();
-        }
-    
-        module slots()
-        {
-            slot();
-            translate(second_half_translation) slot();
-        }
-    
-        module magnet()
-        {
-            translate([magnet_x, magnet_y, magnet_wall_thickness])
-                cylinder( h = block_wall_thickness - magnet_wall_thickness
-                        , r1 = magnet_well_radius
-                        , r2 = magnet_radius
-                        );
-        }
-    
-        module bolt()
-        {
-            translate([bolt_x, bolt_y, 0]) union()
-            {
-                // head
-                cylinder( h = bolt_head_height
-                        , r1 = bolt_head_radius
-                        , r2 = bolt_nominal_radius
-                        );
-    
-                // shaft
-                cylinder( h = bolt_length
-                        , r = bolt_nominal_radius
-                        );
-                
-            }
-        }
-    
-        module one_connector()
-        {
-            slots();
-            magnet();
-            corner_repositioned()
-                mirror([1,0,0]) corner_centered() magnet();
-            bolt();
-        }
-    
         for (deg = [0,90,180,270]) corner_rotate(deg, [0,0,1]) one_connector();
         corner_rotate(90, [0,0,1]) pins();
     }
@@ -308,6 +317,38 @@ module probatio_block( x, y, part="both",
         }
     }
 
+    module connector_pcb_outline()
+    {
+        pcb_thickness = 1.6 * mm;
+        difference()
+        {
+            translate([ inner_origin + pcb_thickness
+                      , inner_origin + pcb_thickness
+                      , 0])
+                cube([ inner_x - inner_origin - 2*pcb_thickness
+                     , inner_y - inner_origin - 2*pcb_thickness
+                     , pcb_thickness]);
+
+            scale([1,1,100]) translate([0,0,-block_wall_thickness/2])
+            for (deg = [0, 90, 180, 270]) corner_rotate(deg, [0,0,1])
+            {
+                hull()
+                {
+                    right_magnet();
+                    translate([0,-block_top_height,0]) right_magnet();
+                    translate([block_top_height,0,0]) right_magnet();
+                }
+                hull()
+                {
+                    left_magnet();
+                    translate([0,-block_top_height,0]) left_magnet();
+                    translate([-block_top_height,0,0]) left_magnet();
+                }
+            }
+            connector_panel_cuts();
+        }
+    }
+
     if (part == "both")
     {
         block_top();
@@ -317,6 +358,6 @@ module probatio_block( x, y, part="both",
         block_top();
     else if (part == "bottom")
         block_bottom();
+    else if (part == "pcb")
+        projection() connector_pcb_outline();
 }
-
-
